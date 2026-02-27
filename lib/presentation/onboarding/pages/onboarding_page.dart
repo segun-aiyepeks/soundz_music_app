@@ -3,6 +3,7 @@ import 'package:soundz_music_app/common/widgets/button/basic_app_button.dart';
 import 'package:soundz_music_app/core/configs/assets/app_images.dart';
 import 'package:soundz_music_app/core/configs/assets/app_vectors.dart';
 import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
+import 'package:soundz_music_app/presentation/mode/pages/choose_mode.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -30,7 +31,9 @@ class OnboardingPage extends StatelessWidget {
                   SizedBox(height: AppTheme.SpaceHeightMedium),
                   Flexible(child: Text("Soundz is a music app that is designed to bring you the best of sounds from the best of artists around the world. Explore billions of music available in our catalog", style: AppTheme.bodyTextlight, textAlign: TextAlign.center,)),
                   SizedBox(height: AppTheme.SpaceHeightMedium,),
-                  BasicAppButton(onPressed: (){}, title: "Get Started")
+                  BasicAppButton(onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ChooseModePage(),));
+                  }, title: "Get Started")
                 ],
               ),
             ),
