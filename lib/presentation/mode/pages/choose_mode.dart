@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:soundz_music_app/common/widgets/button/basic_app_button.dart';
 import 'package:soundz_music_app/core/configs/assets/app_images.dart';
 import 'package:soundz_music_app/core/configs/assets/app_vectors.dart';
 import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
+import 'package:soundz_music_app/presentation/mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -35,22 +37,27 @@ class ChooseModePage extends StatelessWidget {
                       Flexible(
                         child: Column(
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadiusGeometry.circular(50),
-                              child: Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                backgroundBlendMode: BlendMode.xor,
-                                color: Colors.white60
-                                ),
-                                child: BackdropFilter(
-                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                                  child: IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(Ionicons.moon_outline, color: Colors.white,)
+                            GestureDetector(
+                              onTap: () {
+                                context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(50),
+                                child: Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  backgroundBlendMode: BlendMode.xor,
+                                  color: Colors.white60
                                   ),
-                                )
+                                  child: BackdropFilter(
+                                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                                    child: IconButton(
+                                      onPressed: (){}, 
+                                      icon: Icon(Ionicons.moon_outline, color: Colors.white,)
+                                    ),
+                                  )
+                                ),
                               ),
                             ),
                             SizedBox(height: AppTheme.SpaceHeightSmall,),
@@ -61,22 +68,27 @@ class ChooseModePage extends StatelessWidget {
                       Flexible(
                         child: Column(
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadiusGeometry.circular(50),
-                              child: Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                backgroundBlendMode: BlendMode.xor,
-                                color: Colors.white60
-                                ),
-                                child: BackdropFilter(
-                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                                  child: IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(Ionicons.sunny_outline, color: Colors.white,)
+                            GestureDetector(
+                              onTap: () {
+                                context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(50),
+                                child: Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  backgroundBlendMode: BlendMode.xor,
+                                  color: Colors.white60
                                   ),
-                                )
+                                  child: BackdropFilter(
+                                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                                    child: IconButton(
+                                      onPressed: (){}, 
+                                      icon: Icon(Ionicons.sunny_outline, color: Colors.white,)
+                                    ),
+                                  )
+                                ),
                               ),
                             ),
                             SizedBox(height: AppTheme.SpaceHeightSmall,),
