@@ -8,6 +8,7 @@ import 'package:soundz_music_app/core/configs/assets/app_images.dart';
 import 'package:soundz_music_app/core/configs/assets/app_vectors.dart';
 import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
 import 'package:soundz_music_app/presentation/mode/bloc/theme_cubit.dart';
+import 'package:soundz_music_app/presentation/signUp%20or%20Login/pages/signup_login.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -99,7 +100,9 @@ class ChooseModePage extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  BasicAppButton(onPressed: (){}, title: "Continue")
+                  BasicAppButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignupLoginPage(),));
+                  }, title: "Continue")
                 ],
               ),
             ),
