@@ -4,7 +4,8 @@ import 'package:soundz_music_app/common/widgets/button/basic_text_button.dart';
 import 'package:soundz_music_app/core/configs/assets/app_images.dart';
 import 'package:soundz_music_app/core/configs/assets/app_vectors.dart';
 import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
-import 'package:soundz_music_app/presentation/mode/pages/choose_mode.dart';
+import 'package:soundz_music_app/presentation/auth/pages/login_page.dart';
+import 'package:soundz_music_app/presentation/auth/pages/signUp_page.dart';
 
 class SignupLoginPage extends StatelessWidget {
   const SignupLoginPage({super.key});
@@ -47,8 +48,8 @@ class SignupLoginPage extends StatelessWidget {
                 SizedBox(height: AppTheme.SpaceHeightMedium,),
                 Row(
                   children: [
-                    Expanded(child: BasicAppButton(onPressed: (){}, title: "Register")),
-                    Expanded(child: BasicTextButton(onPressed: (){}, title: "Sign In")),
+                    Expanded(child: BasicAppButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));}, title: "Register")),
+                    Expanded(child: BasicTextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));}, title: "Sign In")),
                   ],
                 ),
                 
