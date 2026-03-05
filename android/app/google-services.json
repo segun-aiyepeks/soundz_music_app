@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862378525287",
+    "project_id": "soundz-music-app-e3bc0",
+    "storage_bucket": "soundz-music-app-e3bc0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862378525287:android:7df254bbf689402964cac2",
+        "android_client_info": {
+          "package_name": "com.example.soundz_music_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvrGBpZ_El2nUMiN28YyvZOZDsZloduPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
