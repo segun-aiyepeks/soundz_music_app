@@ -4,11 +4,13 @@ import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
 
 class BasicTextField extends StatelessWidget {
   final String label;
-  const BasicTextField({required this.label, super.key});
+  final TextEditingController controller;
+  const BasicTextField({required this.label, required this.controller, super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.transparent,

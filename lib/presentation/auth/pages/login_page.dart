@@ -6,7 +6,10 @@ import 'package:soundz_music_app/core/configs/themes/app_theme.dart';
 import 'package:soundz_music_app/presentation/auth/pages/signUp_page.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+   LoginPage({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,9 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: AppTheme.SpaceHeightMedium,),
                   Text("Sign In", style: AppTheme.smallTitleText,),
                   SizedBox(height: AppTheme.SpaceHeightLarge,),
-                  BasicTextField(label: "Enter Username or Email",),
+                  BasicTextField(label: "Enter Username or Email", controller: _fullName,),
                   SizedBox(height: AppTheme.SpaceHeightMedium,),
-                  BasicTextField(label: "Enter Password",),
+                  BasicTextField(label: "Enter Password", controller:  _password,),
                   SizedBox(height: AppTheme.SpaceHeightMedium,),
                   BasicAppButton(onPressed: (){}, title: "Sign In"),
                   Spacer(),
